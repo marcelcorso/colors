@@ -37,15 +37,21 @@ function onLoadAudioError(e) {
     console.error(e);
 }
 
-
-chan.on('child_added', function(childSnapshot, prevChildKey) {
-    var color = childSnapshot.val();
+var firstDropped = false;
+chan.limitToLast(1).on('child_added', function(childSnapshot, prevChildKey) {
+    if (!firstDropped) {
+        firstDropped = true;
+        return;
+    }
+    var obj = childSnapshot.val();
     var source = audioContext.createBufferSource();
-    source.buffer = audioBuffers[color];
+    source.buffer = audioBuffers[obj.color];
     source.connect(audioContext.destination);
     source.addEventListener("ended", function() {
         source.disconnect();
     });
+
+    document.querySelector("div").style.backgroundColor = obj.css;
 
     source.start(0);
 });

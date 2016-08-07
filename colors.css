@@ -19,7 +19,7 @@ div {
     background-color: red;
 
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
 
     align-items: center;
@@ -34,6 +34,9 @@ div.master {
 div.slave {
     background-color: black;
     color: white;
+}
+div.langSelector div {
+    height: 100px;
 }
 
 a {
