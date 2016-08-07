@@ -16,7 +16,6 @@ body {
 div {
     flex: 1;
     margin: 0px;
-    background-color: red;
 
     display: flex;
     flex-direction: row;
@@ -36,7 +35,8 @@ div.slave {
     color: white;
 }
 div.langSelector div {
-    height: 100px;
+    background-size: cover;
+    height: 100%;
 }
 
 a {

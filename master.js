@@ -3,8 +3,8 @@ var divs = [];
 var currentLang = "nl";
 
 var imgs = {
-    "nl": "http://www.railwaygazette.com/uploads/pics/tn_nl-ns-train-tulips-abellio_02.jpg",
-    "pt": "http://www.novoeste.com/uploads/image/aviao_empresa_Embraer_Azul_rep_01.jpg"
+    "nl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Flag_of_the_Netherlands.svg/2000px-Flag_of_the_Netherlands.svg.png",
+    "pt": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Flag_of_Brazil.svg/2000px-Flag_of_Brazil.svg.png"
 }
 
 function main() {
@@ -22,8 +22,8 @@ function createDivs() {
         var langDiv = document.createElement("div");
         langSelector.appendChild(langDiv);
         langDiv.setAttribute("data-lang", lang);
-        console.log("url('" + imgs[lang] + "') no-repeat cover ");
-        langDiv.style.background = "url('" + imgs[lang] + "') no-repeat center ";
+        langDiv.style.backgroundImage = "url('" + imgs[lang] + "')";
+        //langDiv.style.background = "url('" + imgs[lang] + "') no-repeat center ";
         // langDiv.appendChild(document.createTextNode(lang));
         langDiv.addEventListener("click", function(e) {
             currentLang = e.target.getAttribute("data-lang");
