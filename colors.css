@@ -27,11 +27,11 @@ div {
     font-size: 32vw;
 }
 
-div.server {
+div.master {
     background-color: white;
     color: black;
 }
-div.client {
+div.slave {
     background-color: black;
     color: white;
 }
